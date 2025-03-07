@@ -2,9 +2,12 @@ $(function() {
  
   $('.shoe').append(`
     <img src="shoeIcon.png" class="img-fluid"></img>`
-  ).css("background","yellow");
+  );
+  // .css("background", "green");
   // TODO: 🐶11. this puts the shoes in the shoe class div, but could we **programatically** default out of that 'tomato' color 
-  
+ 
+  // $('.shoe').css("background", "yellow");
+
   let score = 0; //score initialized at zero each reset
 
   function getWin()
@@ -37,10 +40,12 @@ $(function() {
         $('#gameResult').text('u win'); 
       }
       // TODO: 🐶13. this kinda works when they lose, but can you make into an "else if" so it is bulletproof? 
+      // done 🦈🦈 os
       else if(shoeNo !== win){
         // TODO: 🐶14. Make the score go DOWN by one point if they lose
-        score -= 1;
+        
         // score ????; 
+        score -= 1; 
 
         // TODO: 🐶15. my colors aren't working like I want
         $(this).removeClass('winColor').addClass('loseColor');
@@ -52,7 +57,8 @@ $(function() {
       }
   });
    // TODO: 🐶16. whew, that's a long IIFE in a method. Let's add a comment to let us know we've finsihed it (use that cool up arrow thing like at the end of the doc ready f/n)
-   //↑ends doc ready f/n
+   //↑ends draggable IIFE
+
   $('#replay').on('click', (e)=>{
     //todo: set all my shoes bak to normal color
     $('.shoe').removeClass('winColor').removeClass('loseColor'); 
@@ -69,26 +75,32 @@ $(function() {
 
   $('#reset').on('click', (e)=>{
     // TODO: 🐶17. I ran out of time, help me reset the game. 
-alert('this will reset your score');
-    $('.shoe').removeClass('winColor').removeClass('loseColor'); 
-
-    win = getWin(); //get a new random show number
     
-    //shelly's on the move again
+    alert('this will reset your score');
+    
+    score = 0; 
+    $('.shoe').removeClass('winColor').removeClass('loseColor'); 
+    win = getWin(); //get a new random shoe number
     $('#shellySeal').draggable('enable');
-
-    //todo: remove text
     $('#gameResult').text(''); 
-    $('#score').text(score);
+    $('#score').text(score); 
 
-      score = 0;
 
     // TODO: 🐶18. warn the user that this will reset their score (+5 if not use alert method)  
+
+
   });
 
 
   // I wonder what this is for? 
-  $('#secretSeal').on('click', ()=>{score =89978798978}); 
+  $('#secretSeal').on('click', ()=>{
+    
+    score ='4782';
+      $('#score').text(score); }
+  ); 
+
+
+  //4782
 
 });
 //↑ends doc ready f/n
