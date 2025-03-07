@@ -1,5 +1,5 @@
 # dev-dog
-
+Author: The class and I wokred on this on our live day.
 🦭Cumbie CIS 376 Web Dev Spring '25 Midterm Dev Exam
 
 ### Resources
